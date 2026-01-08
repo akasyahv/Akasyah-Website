@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1 style="text-align: center;">SWOT Analysis</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="akasyah.html">Akasyah</a>
+    <a href="swot.html" class="active">SWOT</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+</nav>
+
+
+</nav>
+
+<section class="card">
+    <h3>Strengths</h3>
+    <ul>
+        <li>Strong communication skills</li>
+        <li>Good teamwork and collaboration</li>
+        <li>Humorous</li>
+        <li>Easy-going</li>
+    </ul>
+
+    <h3>Weaknesses</h3>
+    <ul>
+        <li>Sometimes overthinks tasks</li>
+        <li>Easily procrastinating</li>
+        <li>Easily distracted</li>
+    </ul>
+
+    <h3>Opportunities</h3>
+    <ul>
+        <li>Great mentor to guide me</li>
+        <li>Counselling and internship from UiTM</li>
+        <li>Attend important meet-ups</li>
+    </ul>
+
+    <h3>Threats</h3>
+    <ul>
+        <li>Burnout</li>
+        <li>Fast-changing environment</li>
+        <li>Personal commitments</li>
+    </ul>
+
+ <h3>My SWOT Analysis in picture</h3>
+<div class="photo-box">
+    <a href="images/swot.png" target="_blank">
+        <img src="images/swot.png" height="250" alt="SWOT Analysis">
+    </a>
+</div>
+ 
+
+<footer>
+    <p>© 2025 Akasyah Alias. All rights reserved</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Light Mode";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
+
+<script>
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+</script>
+
+</body>
+</section>

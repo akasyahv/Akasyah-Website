@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Akasyah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1 style="text-align: center;">About Akasyah</h1>
+
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="akasyah.html" class="active">Akasyah</a>
+    <a href="swot.html">SWOT</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+</nav>
+
+
+</nav>
+
+<section class="card">
+    <h2>About Me</h2>
+    <p>Hello! My name is <strong>Muhammad Akasyah</strong>. <strong> 2023601452</strong>. So, I want to show you guys some information about me that you might want to know. I know this is not much, but I will try. You can click 4 button below to learn more about my background, my interests, my personality and my dreams.</p>
+
+<div class="contact-section">
+    <h3>Connect With Me</h3>
+
+    <div class="contact-layout">
+
+        <div class="contact-info">
+            <p><strong>Phone:</strong></p>
+            <a href="tel:+601118814788" class="contact-item">
+                +60 11-1881 4788
+            </a>
+
+            <p><strong>Email:</strong></p>
+            <a href="mailto:akasyahalias@gmail.com" class="contact-item">
+                akasyahalias@gmail.com
+            </a>
+
+            <p><strong>Instagram:</strong></p>
+            <a href="https://instagram.com/akasyahv" target="_blank" class="contact-item">
+                @akasyahv
+            </a>
+
+            <p><strong>Facebook:</strong></p>
+            <a href="https://www.facebook.com/akasyah.alias.14" target="_blank" class="contact-item">
+                @Akasyah Alias
+            </a>
+        </div>
+
+        <div class="contact-map">
+            <h3>Map to my hometown</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2639.2906069094156!2d102.19521822259712!3d5.543476554049283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2smy!4v1766159856075!5m2!1sen!2smy" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </div>
+</div>
+
+    <div class="about-box-container">
+        <div class="about-box" data-box="1">
+            <h3>My Background</h3>
+            <p>Click to read more</p>
+        </div>
+
+        <div class="about-box" data-box="2">
+            <h3>My Interests</h3>
+            <p>Click to read more</p>
+        </div>
+
+        <div class="about-box" data-box="3">
+            <h3>My Personality</h3>
+            <p>Click to read more</p>
+        </div>
+
+        <div class="about-box" data-box="4">
+            <h3>My Dreams</h3>
+            <p>Click to read more</p>
+        </div>
+    </div>
+</section>
+
+<div id="expandOverlay" class="expand-overlay">
+    <div class="expand-content">
+        <span class="close-btn">×</span>
+
+        <h2 id="expandTitle"></h2>
+        <img id="expandImage" src="" alt="" />
+        <p id="expandText"></p>
+    </div>
+</div>
+
+
+</section>
+
+
+<footer>
+    <p>© 2025 Akasyah Alias. All rights reserved</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Light Mode";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
+
+<script>
+const boxes = document.querySelectorAll(".about-box");
+const overlay = document.getElementById("expandOverlay");
+const title = document.getElementById("expandTitle");
+const text = document.getElementById("expandText");
+const image = document.getElementById("expandImage");
+const closeBtn = document.querySelector(".close-btn");
+
+const boxDetails = {
+    1: {
+        title: "My Background",
+        text: "My personal background, starting from my parents, both of my parents is from Kelantan. I grew up in Kuala Krai with my parents in a village called Kampung Kubang Lebur with 8 siblings. I am the 8th child and also known as the youngest child in the family. I have 2 sisters and 5 brothers. 5 of my siblings is already married. Now, I have 6 niece and nephew right now.",
+        image: "images/background.jpg"
+    },
+    2: {
+        title: "My Interests",
+        text: "This is details about what I enjoy like sports, music, gaming, photography or anything that I like! For your information, I really like with photography like I show you at the first picture above. Secondly, I really like with hiking! Hiking picture at the second picture is where I hiking at Dabong with my brother and his friends.",
+        image: "images/interests.jpg"
+    },
+    3: {
+        title: "My Personality",
+        text: "In this box, I will try to describe my traits, strengths, how people usually see me, and my unique characteristics. Usually people see me as happy go lucky person, but it is. I always crack some jokes randomly laugh a lot, seems like a chill friend to befriend with, I hope people will. But when it comes to serious, I'll try to be serious. I want to be someone that can be both. So in this case, I can make a friends with a lot of people.",
+        image: "images/personality.jpg"
+    },
+    4: {
+        title: "My Dreams",
+        text: "My dreams, future goals, and what I want to achieve in life or career. Actually when I was little, I had so many dreams that I want to achieve. Like becoming a firefighter, doctor, a teacher, inventor, but nowadays, I just want to become a successfull person. In my mind, I always think this word that says a lot to me. A rich person does'nt determine by his money and wealth, but it determine with time and togetherness that he has with his beloved one. ",
+        image: "images/dreams.jpg"
+    }
+};
+
+boxes.forEach(box => {
+    box.addEventListener("click", () => {
+        const id = box.dataset.box;
+        const data = boxDetails[id];
+
+        title.textContent = data.title;
+        text.textContent = data.text;
+        image.src = data.image;
+
+        overlay.style.display = "flex";
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.style.display = "none";
+});
+</script>
+
+<script>
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+</script>
+
+
+</body>
+</html>

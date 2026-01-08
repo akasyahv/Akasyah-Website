@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1 style="text-align: center;">Experience</h1>
+
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="akasyah.html">Akasyah</a>
+    <a href="swot.html">SWOT</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html" class="active">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+</nav>
+
+
+</nav>
+
+<section class="card">
+
+    <h2>My Internship Experience</h2>
+
+    <div class="intern-video-box">
+        <video controls>
+            <source src ="videos/internship.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="intern-story">
+
+        <br>
+        <h3>My Internship Journey</h3>
+        <p>
+            I completed my industrial training at <strong>Hospital Sultan Ismail Petra</strong> as an IT staff intern.
+            During this internship, I gained hands-on experience in technical support, networking, and asset management.
+        </p>
+
+        <p>
+            My daily tasks included assisting hospital staff with internet connectivity issues, performing connectivity
+            tests in the server room, checking IT assets, setting up printers, and removing damaged batteries.
+            I also participated in monthly gatherings held at the Rafflesia Auditorium.
+
+            <section class="card">
+
+    <h2>My Fashion Show Experience</h2>
+
+    <div class="intern-video-box">
+        <video controls>
+            <source src="videos/mst.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="intern-story">
+        <br>
+        <h3>Runway & Styling Experience</h3>
+        <p>
+            First of all, I want to thanks Altelia.amani for the best wedding dress for bride and groom. I participated in a fashion show night called Malam Seni Tari under Semarak Seni events under Kebudayaan unit UiTM Machang. This is where I was involved in runway presentation,
+            outfit presentation, and overall event preparation. This experience helped me build
+            confidence, teamwork skills, and stage presence.
+        </p>
+
+        <p>
+            I worked closely with event managers, models, and event designers to ensure smooth
+            execution of the show. From rehearsals to the final runway walk, every stage taught
+            me professionalism and discipline in the fashion industry.
+        </p>
+    </div>
+
+    <h3 style="margin-top: 30px;">Malam Seni Tari's Photos</h3>
+
+    <div class="gallery-container">
+        <div class="gallery-box">
+            <img src="images/mst1.jpeg" alt="Fashion Show 1" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        </div>
+
+        <div class="gallery-box">
+            <img src="images/mst2.jpeg" alt="Fashion Show 2" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        </div>
+
+        <div class="gallery-box">
+            <img src="images/mst.jpg" alt="Fashion Show 3" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        </div>
+
+        <div class="gallery-box">
+            <img src="images/mst3.jpg" alt="Fashion Show 4" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<footer>
+    <p>© 2025 Akasyah Alias. All rights reserved</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Light Mode";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
+
+<script>
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akasyah Alias – Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+</div>
+
+
+
+<header class="header-box">
+
+    <div class="profile-section">
+        <img src="images/minisah.jpg" alt="Akasyah Profile" class="profile-img" id="profileImage">
+    </div>
+
+    <div class="header-text">
+        <h1>Akasyah’s Personal Website</h1>
+        <p>Everything U need to know about me.</p>
+    </div>
+
+</header>
+
+
+ <nav>
+
+    <a href="index.html" class="active">Home</a>
+    <a href="akasyah.html">Akasyah</a>
+    <a href="swot.html">SWOT</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+
+
+</nav>
+
+
+    <section class="card welcome-card">
+    <h2>Hello & Welcome!</h2>
+    <p>This website serves as my personal space where you can learn about my background, strengths, education, internship experience, and more. Just click any of the button above and you guys will get what you want. </p>
+
+    <div class="detail-box">
+        <p style="font-family: times new roman;">This website I dedicated my work to my family, my siblings, my friends, my lecturers, (especially Miss Aina) and everyone whoever who know me.  </p>
+    </div>
+</section>
+
+<audio id="bgMusic" loop>
+    <source src="sounds/pintu keluar.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+
+
+<footer>
+    <p>© 2025 Akasyah Alias. All rights reserved</p>
+    <div id="liveClock" class="live-clock">
+    <span id="dayDate"></span> | <span id="time"></span>
+</div>
+
+</footer>
+
+<script>
+        {
+            alert("Hi guys! \n Welcome to my personal website!! \n Enjoy!")
+        }
+    </script>
+
+    <script>
+const img = document.getElementById("profileImage");
+
+img.addEventListener("mousemove", function(e) {
+    img.style.transform = "scale(1.2)";
+});
+
+img.addEventListener("mouseleave", function() {
+    img.style.transform = "scale(1)";
+});
+</script>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Light Mode";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
+
+<script>
+document.querySelectorAll(".read-more-btn").forEach((btn) => {
+    btn.addEventListener("click", function(e) {
+        const box = e.target.closest(".box");
+
+        box.classList.toggle("expanded");
+    });
+});
+</script>
+
+
+
+<script>
+const music = document.getElementById("bgMusic");
+let played = false;
+
+window.addEventListener("scroll", () => {
+    if (!played) {
+        music.play().catch(() => {});
+        played = true;
+    }
+});
+</script>
+
+<script>
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+</script>
+
+<script>
+function updateClock() {
+    const now = new Date(
+        new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" })
+    );
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayName = days[now.getDay()];
+
+    const date = now.getDate().toString().padStart(2, "0");
+    const month = now.toLocaleString("en-US", { month: "short" });
+    const year = now.getFullYear();
+
+    let hours = now.getHours().toString().padStart(2, "0");
+    let minutes = now.getMinutes().toString().padStart(2, "0");
+    let seconds = now.getSeconds().toString().padStart(2, "0");
+
+    document.getElementById("dayDate").textContent =
+        `${dayName} | ${date} ${month} ${year}`;
+
+    document.getElementById("time").textContent =
+        `${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

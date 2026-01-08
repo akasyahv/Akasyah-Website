@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1 style="text-align: center;">Education Background</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="akasyah.html">Akasyah</a>
+    <a href="swot.html">SWOT</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+</nav>
+
+
+</nav>
+
+<section class="card">
+    <h2>Education Background</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" width="100%">
+        <tr>
+            <th>No</th>
+            <th>Level</th>
+            <th>Institution</th>
+            <th>Year</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Tadika Perpaduan Guchil Luar</td>
+            <td>2011–2012</td>
+            <td>Basic reading, writing, and social skills</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Primary School</td>
+            <td>SK Kampong Tengah</td>
+            <td>2012–2017</td>
+            <td>Active in academics and co-curricular activities</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Secondary School</td>
+            <td>SMK Sultan Yahya Petra 2</td>
+            <td>2018–2023</td>
+            <td>Developed communication and responsibility</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>University</td>
+            <td>UiTM Machang</td>
+            <td>2023–2026</td>
+            <td>Diploma in Information Management</td>
+        </tr>
+    </table>
+</section>
+
+<footer>
+    <p>© 2025 Akasyah Alias. All rights reserved</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Light Mode";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
+
+<script>
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+</script>
+
+
+</body>
+</html>
